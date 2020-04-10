@@ -26,4 +26,11 @@ public class QuantityMeasurementTest {
         double secondFeetValue = quantityMeasurement.getFeetValue(0.0);
         Assert.assertEquals(firstFeetValue, secondFeetValue, 0.0);
     }
+
+    @Test
+    public void givenTwoDifferentFeet_ShouldNotEqual() {
+        double firstFeetValue = quantityMeasurement.getFeetValue(0.0);
+        double secondFeetValue = quantityMeasurement.getFeetValue(1.0);
+        Assert.assertNotEquals(firstFeetValue, secondFeetValue);
+    }
 }
