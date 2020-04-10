@@ -38,4 +38,9 @@ public class QuantityMeasurementTest {
     public void givenNullValue_shouldReturnFalse() {
         Assert.assertFalse(quantityMeasurement.equals(null));
     }
+
+    @Test
+    public void givenReference_shouldReturnTrue() {
+        Assert.assertTrue(quantityMeasurement.equals(quantityMeasurement));
+    }
 }
