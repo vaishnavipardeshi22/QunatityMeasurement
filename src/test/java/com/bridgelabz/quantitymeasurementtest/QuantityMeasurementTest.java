@@ -33,4 +33,9 @@ public class QuantityMeasurementTest {
         double secondFeetValue = quantityMeasurement.getFeetValue(1.0);
         Assert.assertNotEquals(firstFeetValue, secondFeetValue);
     }
+
+    @Test
+    public void givenNullValue_shouldReturnFalse() {
+        Assert.assertFalse(quantityMeasurement.equals(null));
+    }
 }
