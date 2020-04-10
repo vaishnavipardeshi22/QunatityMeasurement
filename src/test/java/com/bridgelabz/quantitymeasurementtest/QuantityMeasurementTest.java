@@ -35,7 +35,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenNullValue_shouldReturnFalse() {
+    public void givenNullValueForFeet_shouldReturnFalse() {
         Assert.assertFalse(quantityMeasurement.equals(null));
     }
 
@@ -49,5 +49,10 @@ public class QuantityMeasurementTest {
         double firstInchValue = quantityMeasurement.getInchValue(0.0);
         double secondInchValue = quantityMeasurement.getInchValue(0.0);
         Assert.assertEquals(firstInchValue, secondInchValue, 0.0);
+    }
+
+    @Test
+    public void givenNullValueForInch_shouldReturnFalse() {
+        Assert.assertFalse(quantityMeasurement.equals(null));
     }
 }
