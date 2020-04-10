@@ -1,14 +1,20 @@
 package com.bridgelabz.quantitymeasurement;
 
-import java.util.Objects;
-
 public class QuantityMeasurement {
 
     private double feetValue;
+    private double inchValue;
 
+    //FUNCTION TO GET FEET VALUE
     public double getFeetValue(double feetValue) {
         this.feetValue = feetValue;
         return feetValue;
+    }
+
+    //FUNCTION TO GET INCH VALUE
+    public double getInchValue(double inchValue) {
+        this.inchValue = inchValue;
+        return inchValue;
     }
 
     @Override
