@@ -14,7 +14,10 @@ public class QuantityMeasurement {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null) return false;
+        if (this.getClass() == o.getClass()) return true;
+        if (o.equals(o))
+            if (o.equals(o)) return true;
         QuantityMeasurement that = (QuantityMeasurement) o;
         return Double.compare(that.feetValue, feetValue) == 0;
     }
