@@ -43,4 +43,11 @@ public class QuantityMeasurementTest {
     public void givenReference_shouldReturnTrue() {
         Assert.assertTrue(quantityMeasurement.equals(quantityMeasurement));
     }
+
+    @Test
+    public void givenTwoInchValuesAsZero_ShouldReturnEqual() {
+        double firstInchValue = quantityMeasurement.getInchValue(0.0);
+        double secondInchValue = quantityMeasurement.getInchValue(0.0);
+        Assert.assertEquals(firstInchValue, secondInchValue, 0.0);
+    }
 }
