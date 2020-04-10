@@ -13,4 +13,10 @@ public class QuantityMeasurementTest {
         double actualFeetValue = quantityMeasurement.getFeetValue(1.0);
         Assert.assertEquals(1.0, actualFeetValue, 0.0);
     }
+
+    @Test
+    public void givenFeet_ShouldNotEqual() {
+        double actualFeetValue = quantityMeasurement.getFeetValue(1.0);
+        Assert.assertNotEquals(2.0, actualFeetValue);
+    }
 }
