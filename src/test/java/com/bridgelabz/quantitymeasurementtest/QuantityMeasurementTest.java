@@ -156,4 +156,13 @@ public class QuantityMeasurementTest {
         double additionResult = quantityMeasurement.getAddition(firstLength, secondLength);
         Assert.assertEquals(24.0, additionResult, 0.0);
     }
+
+    @Test
+    public void givenLengthInInchAndCentimeter_WhenAdd_ThenReturnResultInInch() {
+        double firstLength = 2.0;
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(Unit.CENTIMETER_TO_INCH);
+        double secondLength = quantityMeasurement.getConversion(2.5);
+        double additionResult = quantityMeasurement.getAddition(firstLength, secondLength);
+        Assert.assertEquals(3.0, additionResult, 0.1);
+    }
 }
