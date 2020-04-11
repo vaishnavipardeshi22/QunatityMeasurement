@@ -2,29 +2,28 @@ package com.bridgelabz.quantitymeasurement;
 
 public class QuantityMeasurement {
 
-    private double feetValue;
-    private double inchValue;
+    private double value = 0.0;
+    private Unit unit = null;
 
-    //FUNCTION TO GET FEET VALUE
-    public double getFeetValue(double feetValue) {
-        this.feetValue = feetValue;
-        return feetValue;
+    //DEFAULT CONSTRUCTOR
+    public QuantityMeasurement() {
     }
 
-    //FUNCTION TO GET INCH VALUE
-    public double getInchValue(double inchValue) {
-        this.inchValue = inchValue;
-        return inchValue;
+    //PARAMETERISED CONSTRUCTOR
+    public QuantityMeasurement(double value, Unit unit) {
+        this.value = value;
+        this.unit = unit;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null) return false;
-        if (this.getClass() == o.getClass()) return true;
-        if (o.equals(o))
-            if (o.equals(o)) return true;
+        if (getClass() != o.getClass()) return false;
         QuantityMeasurement that = (QuantityMeasurement) o;
-        return Double.compare(that.feetValue, feetValue) == 0;
+        return Double.compare(that.value, value) == 0 &&
+                unit == that.unit;
     }
+
+    public enum Unit {FEET_VALUE, INCH_VALUE}
 }
