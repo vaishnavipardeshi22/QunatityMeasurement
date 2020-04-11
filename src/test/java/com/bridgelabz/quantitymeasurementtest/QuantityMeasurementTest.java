@@ -138,4 +138,13 @@ public class QuantityMeasurementTest {
         double additionResult = quantityMeasurement.getAddition(firstLength, secondLength);
         Assert.assertEquals(4.0, additionResult, 0.0);
     }
+
+    @Test
+    public void givenOneFeetAndTwoInchValue_WhenAdd_ReturnResultInInch() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(Unit.FEET_TO_INCH);
+        double firstLength = quantityMeasurement.getConversion(1.0);
+        double secondLength = 2.0;
+        double additionResult = quantityMeasurement.getAddition(firstLength, secondLength);
+        Assert.assertEquals(14.0, additionResult, 0.0);
+    }
 }
