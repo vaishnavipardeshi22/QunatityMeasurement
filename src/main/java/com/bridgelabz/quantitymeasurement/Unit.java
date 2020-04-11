@@ -9,7 +9,8 @@ public enum Unit {
     GALLON_TO_LITRES(1 * 3.78),
     LITRE_TO_MILLILITRE(1 * 1000.0), MILLILITRE_TO_LITRE(1 / 1000.0),
     KILOGRAM_TO_GRAM(1 * 1000.0), GRAM_TO_KILOGRAM(1 / 1000.0),
-    TONNE_TO_KILOGRAM(1 * 1000.0);
+    TONNE_TO_KILOGRAM(1 * 1000.0),
+    FAHRENHITE_TO_CELSIUS(1 * 5.0 / 9.0);
 
     public final double lengthValue;
 
