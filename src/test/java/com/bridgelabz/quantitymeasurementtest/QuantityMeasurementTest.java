@@ -6,53 +6,63 @@ import org.junit.Test;
 
 public class QuantityMeasurementTest {
 
-    QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-
     @Test
-    public void givenFeet_ShouldEqual() {
-        double actualFeetValue = quantityMeasurement.getFeetValue(1.0);
-        Assert.assertEquals(1.0, actualFeetValue, 0.0);
+    public void givenTwoFeetValueAsZero_ShouldReturnEqual() {
+        QuantityMeasurement firstFeetValue = new QuantityMeasurement(0.0, QuantityMeasurement.Unit.FEET_VALUE);
+        QuantityMeasurement secondFeetValue = new QuantityMeasurement(0.0, QuantityMeasurement.Unit.FEET_VALUE);
+        Assert.assertEquals(firstFeetValue, secondFeetValue);
     }
 
     @Test
-    public void givenFeet_ShouldNotEqual() {
-        double actualFeetValue = quantityMeasurement.getFeetValue(1.0);
-        Assert.assertNotEquals(2.0, actualFeetValue);
-    }
-
-    @Test
-    public void givenTwoFeetValueAsZero_ShouldEqual() {
-        double firstFeetValue = quantityMeasurement.getFeetValue(0.0);
-        double secondFeetValue = quantityMeasurement.getFeetValue(0.0);
-        Assert.assertEquals(firstFeetValue, secondFeetValue, 0.0);
-    }
-
-    @Test
-    public void givenTwoDifferentFeet_ShouldNotEqual() {
-        double firstFeetValue = quantityMeasurement.getFeetValue(0.0);
-        double secondFeetValue = quantityMeasurement.getFeetValue(1.0);
+    public void givenTwoDifferentFeet_ShouldReturnNotEqual() {
+        QuantityMeasurement firstFeetValue = new QuantityMeasurement(0.0, QuantityMeasurement.Unit.FEET_VALUE);
+        QuantityMeasurement secondFeetValue = new QuantityMeasurement(1.1, QuantityMeasurement.Unit.FEET_VALUE);
         Assert.assertNotEquals(firstFeetValue, secondFeetValue);
     }
 
     @Test
     public void givenNullValueForFeet_shouldReturnFalse() {
-        Assert.assertFalse(quantityMeasurement.equals(null));
+        QuantityMeasurement firstFeetValue = new QuantityMeasurement(0.0, QuantityMeasurement.Unit.FEET_VALUE);
+        QuantityMeasurement secondFeetValue = null;
+        boolean result = firstFeetValue.equals(secondFeetValue);
+        Assert.assertEquals(false, result);
     }
 
     @Test
-    public void givenReference_shouldReturnTrue() {
-        Assert.assertTrue(quantityMeasurement.equals(quantityMeasurement));
+    public void givenReferenceForFeet_shouldReturnFalse() {
+        QuantityMeasurement feetValue = new QuantityMeasurement(0.0, QuantityMeasurement.Unit.FEET_VALUE);
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        boolean result = feetValue.equals(quantityMeasurement);
+        Assert.assertEquals(false, result);
     }
 
     @Test
     public void givenTwoInchValuesAsZero_ShouldReturnEqual() {
-        double firstInchValue = quantityMeasurement.getInchValue(0.0);
-        double secondInchValue = quantityMeasurement.getInchValue(0.0);
-        Assert.assertEquals(firstInchValue, secondInchValue, 0.0);
+        QuantityMeasurement firstInchValue = new QuantityMeasurement(0.0, QuantityMeasurement.Unit.INCH_VALUE);
+        QuantityMeasurement secondInchValue = new QuantityMeasurement(0.0, QuantityMeasurement.Unit.INCH_VALUE);
+        Assert.assertEquals(firstInchValue, secondInchValue);
+    }
+
+    @Test
+    public void givenTwoDifferentInchValuesAsZero_ShouldReturnNotEqual() {
+        QuantityMeasurement firstInchValue = new QuantityMeasurement(0.0, QuantityMeasurement.Unit.INCH_VALUE);
+        QuantityMeasurement secondInchValue = new QuantityMeasurement(1.0, QuantityMeasurement.Unit.INCH_VALUE);
+        Assert.assertNotEquals(firstInchValue, secondInchValue);
     }
 
     @Test
     public void givenNullValueForInch_shouldReturnFalse() {
-        Assert.assertFalse(quantityMeasurement.equals(null));
+        QuantityMeasurement firstFeetValue = new QuantityMeasurement(0.0, QuantityMeasurement.Unit.INCH_VALUE);
+        QuantityMeasurement secondFeetValue = null;
+        boolean result = firstFeetValue.equals(secondFeetValue);
+        Assert.assertEquals(false, result);
+    }
+
+    @Test
+    public void givenReferenceForInch_shouldReturnFalse() {
+        QuantityMeasurement feetValue = new QuantityMeasurement(0.0, QuantityMeasurement.Unit.INCH_VALUE);
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        boolean result = feetValue.equals(quantityMeasurement);
+        Assert.assertEquals(false, result);
     }
 }
