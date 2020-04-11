@@ -80,4 +80,11 @@ public class QuantityMeasurementTest {
         double feetToYardConversion = quantityMeasurement.getConversion(3.0);
         Assert.assertEquals(1.0, feetToYardConversion, 0.0);
     }
+
+    @Test
+    public void givenFeetValueConvertToYard_ShouldReturnNotEqual() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(Unit.FEET_TO_YARD);
+        double feetToYardConversion = quantityMeasurement.getConversion(1.0);
+        Assert.assertNotEquals(1.0, feetToYardConversion);
+    }
 }
