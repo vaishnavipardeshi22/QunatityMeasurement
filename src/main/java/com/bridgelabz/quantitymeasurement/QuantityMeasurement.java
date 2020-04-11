@@ -1,7 +1,5 @@
 package com.bridgelabz.quantitymeasurement;
 
-import java.util.Objects;
-
 public class QuantityMeasurement {
 
     Unit unitType;
@@ -19,11 +17,15 @@ public class QuantityMeasurement {
         return unitType == that.unitType;
     }
 
-    public double getConversion(double lengthValue) {
-        return (lengthValue * unitType.lengthValue);
+    //FUNCTION TO GET CONVERTED VALUE
+    public double getConversion(double conversionValue) {
+        if (unitType.equals(Unit.FAHRENHITE_TO_CELSIUS))
+            return ((conversionValue - 32) * unitType.lengthValue);
+        return (conversionValue * unitType.lengthValue);
     }
 
-    public double getAddition(double firstLength, double secondLength) {
-        return (firstLength + secondLength);
+    //FUNCTION TO ADD QUANTITY
+    public double getAddition(double firstQuantity, double secondQuantity) {
+        return (firstQuantity + secondQuantity);
     }
 }
