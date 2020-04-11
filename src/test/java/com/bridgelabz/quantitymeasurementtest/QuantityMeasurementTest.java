@@ -221,4 +221,11 @@ public class QuantityMeasurementTest {
         double additionResult = quantityMeasurement.getAddition(firstWeight, secondWeight);
         Assert.assertEquals(1001.0, additionResult, 0.0);
     }
+
+    @Test
+    public void givenFahrenheitConvertToCelsius_ShouldReturnEqual() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(Unit.FAHRENHITE_TO_CELSIUS);
+        double fahrenheitToCelsius = quantityMeasurement.getConversion(212.0);
+        Assert.assertEquals(100.0, fahrenheitToCelsius, 0.0);
+    }
 }
