@@ -172,4 +172,11 @@ public class QuantityMeasurementTest {
         double gallonToLitresConversion = quantityMeasurement.getConversion(1.0);
         Assert.assertEquals(3.78, gallonToLitresConversion, 0.1);
     }
+
+    @Test
+    public void givenOneLitreVolumeConvertToMilliLitre_ShouldReturnEqual() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(Unit.LITRE_TO_MILLILITRE);
+        double litreToMillilitreCnversion = quantityMeasurement.getConversion(1.0);
+        Assert.assertEquals(1000.0, litreToMillilitreCnversion, 0.0);
+    }
 }
