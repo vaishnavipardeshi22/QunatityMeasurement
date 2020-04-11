@@ -176,7 +176,25 @@ public class QuantityMeasurementTest {
     @Test
     public void givenOneLitreVolumeConvertToMilliLitre_ShouldReturnEqual() {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement(Unit.LITRE_TO_MILLILITRE);
-        double litreToMillilitreCnversion = quantityMeasurement.getConversion(1.0);
-        Assert.assertEquals(1000.0, litreToMillilitreCnversion, 0.0);
+        double litreToMillilitreConversion = quantityMeasurement.getConversion(1.0);
+        Assert.assertEquals(1000.0, litreToMillilitreConversion, 0.0);
+    }
+
+    @Test
+    public void givenOneGallonAndOneLitreValue_WhenAdd_ShouldReturnResultInLitres() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(Unit.GALLON_TO_LITRES);
+        double firstVolume = quantityMeasurement.getConversion(1.0);
+        double secondVolume = 3.78;
+        double additionResult = quantityMeasurement.getAddition(firstVolume, secondVolume);
+        Assert.assertEquals(7.57, additionResult, 0.1);
+    }
+
+    @Test
+    public void givenOneLitreAndOneMillilitreValue_WhenAdd_ShouldReturnResultInLitres() {
+        double firstVolume = 1.0;
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(Unit.MILLILITRE_TO_LITRE);
+        double secondVolume = quantityMeasurement.getConversion(1000.0);
+        double additionResult = quantityMeasurement.getAddition(firstVolume, secondVolume);
+        Assert.assertEquals(2.0, additionResult, 0.0);
     }
 }
