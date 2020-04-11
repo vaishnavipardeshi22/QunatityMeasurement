@@ -73,4 +73,11 @@ public class QuantityMeasurementTest {
         double feetToInchConversion = quantityMeasurement.getConversion(1.0);
         Assert.assertEquals(12.0, feetToInchConversion, 0.0);
     }
+
+    @Test
+    public void givenFeetValueConvertToYard_ShouldReturnEqual() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(Unit.FEET_TO_YARD);
+        double feetToYardConversion = quantityMeasurement.getConversion(3.0);
+        Assert.assertEquals(1.0, feetToYardConversion, 0.0);
+    }
 }

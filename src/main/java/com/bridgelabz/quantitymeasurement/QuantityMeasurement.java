@@ -19,11 +19,6 @@ public class QuantityMeasurement {
         return unitType == that.unitType;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(unitType);
-    }
-
     public double getConversion(double lengthValue) {
         return (lengthValue * unitType.lengthValue);
     }
