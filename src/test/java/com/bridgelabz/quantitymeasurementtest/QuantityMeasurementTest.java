@@ -115,4 +115,11 @@ public class QuantityMeasurementTest {
         double yardToFeetConversion = quantityMeasurement.getConversion(1.0);
         Assert.assertEquals(3.0, yardToFeetConversion, 0.0);
     }
+
+    @Test
+    public void givenInchValueToConvertCentimeter_ShouldReturnEqual() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(Unit.INCH_TO_CENTIMETER);
+        double inchToCentimeterConversion = quantityMeasurement.getConversion(2.0);
+        Assert.assertEquals(5.0, inchToCentimeterConversion, 0.1);
+    }
 }
