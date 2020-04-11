@@ -197,4 +197,28 @@ public class QuantityMeasurementTest {
         double additionResult = quantityMeasurement.getAddition(firstVolume, secondVolume);
         Assert.assertEquals(2.0, additionResult, 0.0);
     }
+
+    @Test
+    public void givenOneKilogramToConvertToGrams_ShouldReturnEqual() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(Unit.KILOGRAM_TO_GRAM);
+        double kilogramToGramConversion = quantityMeasurement.getConversion(1.0);
+        Assert.assertEquals(1000.0, kilogramToGramConversion, 0.0);
+    }
+
+    @Test
+    public void givenOneTonneToConvertToKilogram_ShouldReturnEqual() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(Unit.TONNE_TO_KILOGRAM);
+        double tonneToKilogramConversion = quantityMeasurement.getConversion(1.0);
+        Assert.assertEquals(1000.0, tonneToKilogramConversion, 0.0);
+    }
+
+    @Test
+    public void givenTonneAndGram_WhenAdd_ShouldReturnResult_InKilogram() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(Unit.TONNE_TO_KILOGRAM);
+        double firstWeight = quantityMeasurement.getConversion(1.0);
+        QuantityMeasurement quantityMeasurement1 = new QuantityMeasurement(Unit.GRAM_TO_KILOGRAM);
+        double secondWeight = quantityMeasurement1.getConversion(1000.0);
+        double additionResult = quantityMeasurement.getAddition(firstWeight, secondWeight);
+        Assert.assertEquals(1001.0, additionResult, 0.0);
+    }
 }
