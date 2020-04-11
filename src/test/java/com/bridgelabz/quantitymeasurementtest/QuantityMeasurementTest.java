@@ -117,9 +117,16 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenInchValueToConvertCentimeter_ShouldReturnEqual() {
+    public void givenInchValueToConvertToCentimeter_ShouldReturnEqual() {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement(Unit.INCH_TO_CENTIMETER);
         double inchToCentimeterConversion = quantityMeasurement.getConversion(2.0);
         Assert.assertEquals(5.0, inchToCentimeterConversion, 0.1);
+    }
+
+    @Test
+    public void givenInchValueToConvertToCentimeter_shouldReturnNotEqual() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(Unit.INCH_TO_CENTIMETER);
+        double inchToCentimeterConversion = quantityMeasurement.getConversion(1.0);
+        Assert.assertNotEquals(1.0, inchToCentimeterConversion);
     }
 }
