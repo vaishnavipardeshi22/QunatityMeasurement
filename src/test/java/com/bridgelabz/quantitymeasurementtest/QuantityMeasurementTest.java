@@ -147,4 +147,13 @@ public class QuantityMeasurementTest {
         double additionResult = quantityMeasurement.getAddition(firstLength, secondLength);
         Assert.assertEquals(14.0, additionResult, 0.0);
     }
+
+    @Test
+    public void givenTwoFeetLength_WhenAdd_ThenReturnResultInInch() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(Unit.FEET_TO_INCH);
+        double firstLength = quantityMeasurement.getConversion(1.0);
+        double secondLength = quantityMeasurement.getConversion(1.0);
+        double additionResult = quantityMeasurement.getAddition(firstLength, secondLength);
+        Assert.assertEquals(24.0, additionResult, 0.0);
+    }
 }
