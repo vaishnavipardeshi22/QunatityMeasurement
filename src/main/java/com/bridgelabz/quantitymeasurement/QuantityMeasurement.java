@@ -22,4 +22,8 @@ public class QuantityMeasurement {
     public double getConversion(double lengthValue) {
         return (lengthValue * unitType.lengthValue);
     }
+
+    public double getAddition(double firstLength, double secondLength) {
+        return (firstLength + secondLength);
+    }
 }
