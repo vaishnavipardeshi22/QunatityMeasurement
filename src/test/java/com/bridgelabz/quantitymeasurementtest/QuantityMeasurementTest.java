@@ -165,4 +165,11 @@ public class QuantityMeasurementTest {
         double additionResult = quantityMeasurement.getAddition(firstLength, secondLength);
         Assert.assertEquals(3.0, additionResult, 0.1);
     }
+
+    @Test
+    public void givenOneGallonVolumeConvertToLitres_ShouldReturnEquals() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(Unit.GALLON_TO_LITRES);
+        double gallonToLitresConversion = quantityMeasurement.getConversion(1.0);
+        Assert.assertEquals(3.78, gallonToLitresConversion, 0.1);
+    }
 }
