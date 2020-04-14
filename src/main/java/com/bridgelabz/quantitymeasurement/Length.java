@@ -14,7 +14,6 @@ public enum Length implements UnitInterface{
         this.lengthValue = lengthValue;
     }
 
-
     @Override
     public double getConversionValue(Double unitValue) {
         return this.lengthValue * unitValue;
