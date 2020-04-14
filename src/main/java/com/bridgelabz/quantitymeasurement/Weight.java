@@ -11,7 +11,6 @@ public enum  Weight implements UnitInterface{
         this.weightValue = weightValue;
     }
 
-
     @Override
     public double getConversionValue(Double unitValue) {
         return this.weightValue * unitValue;
