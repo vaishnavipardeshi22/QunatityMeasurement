@@ -1,7 +1,5 @@
 package com.bridgelabz.quantitymeasurement;
 
-import jdk.nashorn.internal.ir.FunctionNode;
-
 import java.util.Objects;
 
 public class QuantityMeasurement {
